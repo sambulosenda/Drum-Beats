@@ -6,7 +6,6 @@
   <link rel="stylesheet" href="index.css">
 </head>
 <body>
-
   <div class="keys">
     <div data-key="65" class="key">
       <kbd>A</kbd>
@@ -46,7 +45,6 @@
     </div>
   </div>
 
-
   <audio data-key="65" src="sounds/clap.wav"></audio>
   <audio data-key="83" src="sounds/hihat.wav"></audio>
   <audio data-key="68" src="sounds/kick.wav"></audio>
@@ -61,7 +59,8 @@
 <script>
   window.addEventListener('keydown',function(e) {
   const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
-  console.log(audio)
+  if(!audio) return;
+  audio.play();
   });
 
 
